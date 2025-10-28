@@ -10,28 +10,29 @@ export default function WeatherApp() {
 
   // Fetch weather by city
   const fetchWeatherByCity = async (cityName) => {
-    try {
-      setLoading(true);
-      const res = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&aqi=no`
-      );
-      const data = await res.json();
-      if (data.error) throw new Error(data.error.message);
-      setWeather(data);
-      setError("");
-    } catch (err) {
-      setError("City not found or API error.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    setLoading(true);
+    const res = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&aqi=no`
+    );
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message);
+    setWeather(data);
+    setError("");
+  } catch (err) {
+    setError("City not found or API error.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   // Fetch weather by coordinates
   const fetchWeatherByCoords = async (lat, lon) => {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}&aqi=no`
       );
       const data = await res.json();
       if (data.error) throw new Error(data.error.message);
