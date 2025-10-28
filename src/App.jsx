@@ -78,7 +78,7 @@ export default function WeatherApp() {
       <div className="md:flex justify-between items-center">
         <h1 className="text-[36px] font-bold mb-6 md:text-start text-center font-bebas tracking-[10px]">Weather</h1>
 
-      <form onSubmit={handleSearch} className="flex gap-2 mb-6">
+      <form onSubmit={handleSearch} className="flex gap-2 mb-6 md:justify-start justify-center">
         <input
           type="text"
           placeholder="Search city..."
@@ -88,8 +88,7 @@ export default function WeatherApp() {
         />
         <button
           type="submit"
-          className="bg-white text-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-gray-100 cursor-pointer"
-        >
+          className="bg-white text-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-gray-100 cursor-pointer">
           Search
         </button>
       </form>
